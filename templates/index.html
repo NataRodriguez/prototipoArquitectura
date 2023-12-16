@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Catálogo de Productos</h2>
+    <a href="/add-product" class="btn btn-success mb-3">Agregar Nuevo Producto</a>    
+    <a href="/orders" class="btn btn-info mb-3 ml-2">Ver Pedidos</a>
+
+    <div>
+        {% for product in products %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.nombre }}</h5>
+                    <p class="card-text">{{ product.descripcion }}</p>
+                    <p class="card-text"><small class="text-muted">Precio: ${{ product.precio }}</small></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

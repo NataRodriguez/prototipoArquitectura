@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Pedidos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Pedidos</h2>    
+    <a href="/add-order" class="btn btn-info mb-3">Nuevo Pedido</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha y Hora</th>
+                <th>Estado</th>
+                <th>Subtotal</th>
+                <th>Descuento</th>
+                <th>Total</th>
+                <!-- Añadir más columnas si es necesario -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for pedido in orders %}
+            <tr>
+                <td>{{ pedido.id }}</td>
+                <td>{{ pedido.fecha_hora }}</td>
+                <td>{{ pedido.estado }}</td>
+                <td>{{ pedido.subtotal }}</td>
+                <td>{{ pedido.descuento }}</td>
+                <td>{{ pedido.total }}</td>
+                <!-- Añadir más datos si es necesario -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
